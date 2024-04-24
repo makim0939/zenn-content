@@ -148,8 +148,8 @@ server.on('connection', (ws) => {
   </body>
 </html>
 ```
-![](https://github.com/makim0939/zenn-content/tree/40b718b263e01e6908e48ae413a5b4a16abbf7f3/articles/images/websocket-bacic-20240424-demo.gif)
+![demo](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/websocket-bacic-20240424-demo.gif)
 ## WebSocketとは
 
 ## WebSocketとSocket.ioの違いと使い分け
-
+articles/images/
