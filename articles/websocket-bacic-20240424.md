@@ -3,7 +3,7 @@ title: "WebSocketで特定のクライアントにデータを送信する"
 emoji: "🪐"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["javascript", "websocket", "socketio"]
-published: false
+published: true
 ---
 
 この記事ではWebSocketによるサーバ・ブラウザ間双方向通信で、指定したクライアントにのみメッセージを送信する方法を紹介します。
