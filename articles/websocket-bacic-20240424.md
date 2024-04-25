@@ -8,7 +8,7 @@ published: true
 
 この記事ではWebSocketによるサーバ・ブラウザ間双方向通信で、指定したクライアントにのみメッセージを送信する方法を紹介します。
 ## 実装
-### 開発構築
+### 開発環境
 クライアント側ではブラウザAPIである[WebSocketAPI](https://developer.mozilla.org/ja/docs/Web/API/WebSockets_API)を使います。
 サーバ側では[ws](http://localhost:8000/articles/websocket-bacic-20240424)というNode.jsライブラリを使います。
 ```
