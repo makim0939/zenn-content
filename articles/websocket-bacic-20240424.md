@@ -8,8 +8,9 @@ published: false
 
 この記事ではWebSocketによるサーバ・ブラウザ間双方向通信で、指定したクライアントにのみメッセージを送信する方法を紹介します。
 ## 実装
-### 環境構築
-サーバ側にはwsをインストールしておきます。
+### 開発構築
+クライアント側ではブラウザAPIである[WebSocketAPI](https://developer.mozilla.org/ja/docs/Web/API/WebSockets_API)を使います。
+サーバ側では[ws](http://localhost:8000/articles/websocket-bacic-20240424)というNode.jsライブラリを使います。
 ```
 npm install ws
 ```
@@ -65,7 +66,7 @@ server.on('connection', (ws) => {
 -----
 ### 特定のクライアントのみにメッセージを送信する。
 各クライアントに対してIDを割り振ることで実装します。
-```js server.js
+```js: server.js
 const Server = require('ws').Server;
 
 const server = new Server({ port: 3000 });
@@ -90,6 +91,7 @@ server.on('connection', (ws) => {
   assignClientId(ws);
   ws.on('message', (messageData) => {
     const [message, id] = ('' + messageData).split(',');
+    //指定のidを持つクライアントに送信
     let i = 0;
     server.clients.forEach((client) => {
       if (client.readyState === ws.OPEN && (id === '' + i || id === '')) {
@@ -106,7 +108,7 @@ server.on('connection', (ws) => {
 
 ```
 
-```html client.html
+```html: client.html
 <!doctype html>
 <html lang="en">
   <head>
@@ -130,16 +132,18 @@ server.on('connection', (ws) => {
         if (typeof e.data === 'string') {
           console.log(e.data);
           if (e.data.slice(0, 2) === 'id') {
+            //自身のidを受信した時の処理
             document.getElementById('clientId').textContent = e.data.slice(2);
           } else if (e.data.slice(0, 2) === 'me') {
+            //メッセージを受信した時の処理
             const li = document.createElement('li');
             li.textContent = e.data.slice(2);
             document.getElementById('message_list').appendChild(li);
           }
         }
       });
-
-      const sendMessage = (e) => {
+    //ボタンを押した際に、データを送信
+    const sendMessage = (e) => {
         const id = document.getElementById('id').value;
         const message = document.getElementById('message').value;
         socket.send(`${message},${id}`);
@@ -148,8 +152,19 @@ server.on('connection', (ws) => {
   </body>
 </html>
 ```
-![demo](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/websocket-bacic-20240424-demo.gif)
+![demo](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/websocket-bacic-20240424-demo2.gif)
+
+#### 実行方法
+サーバ側
+```
+node server.js
+```
+クライアント側はVSCodeの拡張機能LiveServerなどを使いサーバを起動してください。
 ## WebSocketとは
+WebSocketとはHTTPと同様通信プロトコルの一種です。
+HTTPとは異なり、ブラウザからのリクエストなしにサーバからブラウザにデータを送信できます。
 
 ## WebSocketとSocket.ioの違いと使い分け
-articles/images/
+Socket.ioはブラウザのWebSocketへの対応が不十分だった時代にそれを補う目的で使用されました。現在はほとんどのブラウザがWebSocketをサポートしているため用途に応じて使い分ける必要があります。
+https://developer.mozilla.org/ja/docs/Web/API/WebSockets_API
+https://socket.io/docs/v4/
