@@ -3,14 +3,14 @@ title: "WebRTCで最もシンプルなビデオチャットを実装する"
 emoji: "🤙"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [javascript, webrtc,]
-published: false
+published: true
 ---
 この記事では、WebRTCによるP2P通信で、できるだけシンプルにビデオチャットを実装する方法を紹介します。
 WebRTCについて実際にコードを書いて理解を深めたい方は参考にしてみてください。
 ## デモ
-PC1台でのデモ
+- PC1台でのデモ
 ![demo1](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427-demo5.gif)
-Https環境を用意して、スマホ・タブレットで行ったデモ(iPad・iPhone / Safari)
+- https環境を用意して2つのデバイスで行ったデモ(iPad・iPhone / Safari)
 ![demo2](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427-demo4.gif)
 ## 実装
 ### 開発環境
@@ -148,7 +148,6 @@ setAnswerButton.onclick = async () => {
   } catch (e) {
     textContainer.innerHTML = "Answerの登録に失敗しました。\n正しくSDP Answerがコピー・ペーストできているか確認してください。";
   }
-  
 };
 
 //setLocalDescription()で発火するイベント. ICE Candidateを配列に格納しておく
@@ -191,7 +190,6 @@ createAnswerButton.onclick = async () => {
     console.error(e);
     textContainer.innerHTML = "Answerの生成に失敗しました。\n正しくOfferが登録できているか確認してください。";
   }
-  
 };
 
 setOfferButton.onclick = async () => {
@@ -311,6 +309,16 @@ html {
 ```
 :::
 
-### コードの解説
-
 ## WebRTCとは
+WebRTCはサーバを介さずブラウザ同士でP2P通信を行うための仕組みです。
+サーバを介さないためクライアントサイドのプログラムのみで通信を行うことができます。
+データを記録する必要がないワンタイム・リアルタイムなアプリケーションに非常に有効な仕組みです。
+
+### WebRTCの仕組み
+以下の手順を踏むことでWebRTCで通信を行うことができます。
+- SDPの交換
+  SDPにはIPアドレスや通信でやり取りするメディアの種類や形式等の情報が含まれます。
+- ICE Candidateの交換　
+  ICE Candidateとは通信を確立するための通信経路の候補のことで、各クライアントが通信経路候補を収集し、それを交換することで最適な経路が選択されます。
+
+https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API/Protocols
