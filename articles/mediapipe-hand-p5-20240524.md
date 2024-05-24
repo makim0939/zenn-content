@@ -3,7 +3,7 @@ title: "MediaPipeの検出結果をもとに、P5で描画する。"
 emoji: "🖐️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [mediapipe, p5, typescript, javascript]
-published: false
+published: public
 ---
 ## デモ
 
@@ -137,9 +137,11 @@ const result = handLandmarker.detectForVideo(video, video.currentTime);
 //1つ目の手の親指のx位置を取得
 const 　thumbTipX = result[0][4].x
 ```
-![ハンドランドマーク検出](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-handditection.png)
-
-
+![ハンドランドマーク検出](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-handditection.png =320x)
 
 ## MediaPipeについて
-## P5以外での実装
+MediaPipeでは画像・音声・テキストに対して様々な分類、検出が行えます。
+また、LLMをデバイス上で実行でき、文章の認識や生成も行えます。
+WebAssemblyを用いることで、デバイス側で高速に処理を行えるようにしているみたいです。
+
+https://ai.google.dev/edge/mediapipe/solutions/guide
