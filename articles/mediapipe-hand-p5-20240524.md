@@ -128,8 +128,18 @@ new p5(sketch);
 npm run dev 
 ```
 ### 解説
-**HandLandmarkerOptionsの内容**
 **HandLandmarkの検出**
+```result.handLandmarks```は検出された手の数と同じ大きさの配列になっています。
+HandLandmarkは下の画像のように取得され、1つ目の手の親指の先端のx位置を取得したければ
+```result.handLandmarks[0][4].x```で取得できます。
+```ts
+const result = handLandmarker.detectForVideo(video, video.currentTime);
+//1つ目の手の親指のx位置を取得
+const 　thumbTipX = result[0][4].x
+```
+![ハンドランドマーク検出](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-handditection.png)
+
+
 
 ## MediaPipeについて
 ## P5以外での実装
