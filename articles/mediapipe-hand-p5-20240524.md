@@ -5,6 +5,8 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [mediapipe, p5, typescript, javascript]
 published: true
 ---
+この記事ではGoogle MediaPipeを用いて手を検出し、その結果をもとにP5で描画を行う方法を紹介します。
+P5による描画をカスタマイズしてコンテンツに活用できると思います。
 ## デモ
 ![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-demo1.gif)
 ## 実装
