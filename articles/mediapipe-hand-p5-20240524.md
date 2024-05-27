@@ -6,7 +6,7 @@ topics: [mediapipe, p5, typescript, javascript]
 published: true
 ---
 ## デモ
-
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-demo1.gif)
 ## 実装
 **🌾捕捉事項**
 >過去の記事ではMediaPipe Handsが用いられており、npmパッケージも@mediapipe/handsなどを使い実装されているものが多かった。
