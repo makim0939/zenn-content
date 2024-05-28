@@ -6,7 +6,7 @@ topics: [javascript, typescript, textaliveappapi]
 published: false
 ---
 ## デモ
-
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527-demo1.gif =480x)
 ## 実装
 ### 環境構築
 TextAliveAppApiを使用するには、[開発者登録](https://developer.textalive.jp/profile)をしてTextAliveアプリを作成し、アプリトークンを取得する必要があります。
@@ -48,7 +48,7 @@ const addButtonEventListeners = () => {
 };
 
 // ===== 楽曲情報を取得、表示するためのメソッドを用意 ===== //
-//ループしてその都度データを取得、表示します。
+//ループしてその都度データを取得、表示します。prevBeatStartTimeは
 const loop = (prevBeatStartTime?: number) => {
   const nowPosition = player.timer.position;
   //歌詞の取得。文字・単語・フレーズ単位で取得できます。
