@@ -152,7 +152,7 @@ server.on('connection', (ws) => {
   </body>
 </html>
 ```
-![demo](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/websocket-bacic-20240424-demo2.gif)
+![demo](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/websocket-bacic-20240424/demo.gif)
 
 #### 実行方法
 サーバ側

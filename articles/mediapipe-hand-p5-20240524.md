@@ -8,7 +8,7 @@ published: true
 この記事ではGoogle MediaPipeを用いて手を検出し、その結果をもとにP5で描画を行う方法を紹介します。
 P5による描画をカスタマイズしてコンテンツに活用できると思います。
 ## デモ
-![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-demo1.gif)
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524/demo.gif)
 ## 実装
 **🌾捕捉事項**
 >過去の記事ではMediaPipe Handsが用いられており、npmパッケージも@mediapipe/handsなどを使い実装されているものが多かった。
@@ -139,7 +139,7 @@ const result = handLandmarker.detectForVideo(video, video.currentTime);
 //1つ目の手の親指のx位置を取得
 const 　thumbTipX = result[0][4].x
 ```
-![ハンドランドマーク検出](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524-handditection.png =320x)
+![ハンドランドマーク検出](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/mediapipe-hand-p5-20240524/handditection.png =320x)
 
 ## MediaPipeについて
 MediaPipeでは画像・音声・テキストに対して様々な分類、検出が行えます。

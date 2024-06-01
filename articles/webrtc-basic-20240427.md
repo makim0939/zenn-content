@@ -10,9 +10,9 @@ published: true
 WebRTCについて実際にコードを書いて理解を深めたい方は参考にしてみてください。
 ## デモ
 - PC1台でのデモ
-![demo1](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427-demo5.gif)
+![demo1](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427/demo2.gif)
 - https環境を用意して2つのデバイスで行ったデモ(iPad・iPhone / Safari)
-![demo2](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427-demo4.gif)
+![demo2](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/webrtc-basic-20240427/demo1.gif)
 ## 実装
 ### 開発環境
 別デバイスからもアクセスしてテストする場合は、httpsで動作す環境を用意します。

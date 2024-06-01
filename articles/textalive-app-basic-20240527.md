@@ -5,13 +5,17 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [javascript, typescript, textaliveappapi]
 published: false
 ---
+この記事では[TextAliveAppAPI](https://developer.textalive.jp/)を使って、楽曲から歌詞・コード・ビートを取得するシンプルな実装を紹介します。
+
 ## デモ
-![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527-demo1.gif =480x)
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/demo1.gif =480x)
 ## 実装
 ### 環境構築
+**TextAliveAppAPIの事前準備**
 TextAliveAppApiを使用するには、[開発者登録](https://developer.textalive.jp/profile)をしてTextAliveアプリを作成し、アプリトークンを取得する必要があります。
+![アプリトークンの取得](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/apptoken.png =480x)
 
-viteプロジェクトの作成、npmパッケージのインストール
+**viteプロジェクトの作成、npmパッケージのインストール**
 ```
 npm create vite@latest プロジェクト名 -- --template vanilla-ts
 npm i
@@ -19,11 +23,8 @@ npm i
 ```
 npm i textalive-app-api
 ```
-### コードの全体像
+### 歌詞・コード・ビート情報を取得し表示する
 ```ts: main.ts
-import './style.css';
-import { IPlayerApp, Player, Timer } from 'textalive-app-api';
-
 // ===== ボタンと表示部分の準備 ===== //
 //HTML要素を取得します。
 const playButton = document.querySelector('#play_button') as HTMLButtonElement;
@@ -48,47 +49,43 @@ const addButtonEventListeners = () => {
 };
 
 // ===== 楽曲情報を取得、表示するためのメソッドを用意 ===== //
-//ループしてその都度データを取得、表示します。prevBeatStartTimeは
-const loop = (prevBeatStartTime?: number) => {
-  const nowPosition = player.timer.position;
+//Playerに設定するイベントリスナです。(onAppReady, onTimerReady, onTimeUpdate)
+const onAppReady = (app: IPlayerApp) => {
+  //好きな楽曲のURLを指定します。//URLの取得方法は記事の後半で解説しています。
+  player.createFromSongUrl('https://piapro.jp/t/fnhJ/20230131212038');
+  addButtonEventListeners();
+};
+
+const onTimerReady = (t: Timer) => {
+  //再生の準備が整った時に呼ばれます。
+  playButton.disabled = false;
+  pauseButton.disabled = false;
+  rewindButton.disabled = false;
+};
+
+let prevBeatPosition = -1;
+const onTimeUpdate = (position: number) => {
   //歌詞の取得。文字・単語・フレーズ単位で取得できます。
-  const char = player.video.findChar(nowPosition)?.text;
-  const word = player.video.findWord(nowPosition)?.text;
-  const phrase = player.video.findPhrase(nowPosition)?.text;
+  const char = player.video.findChar(position)?.text;
+  const word = player.video.findWord(position)?.text;
+  const phrase = player.video.findPhrase(position)?.text;
   //歌詞があれば表示します。
   char && (charDisplay.textContent = char);
   word && (wordDisplay.textContent = word);
   phrase && (phraseDisplay.textContent = phrase);
 
   //コードの取得
-  chordDisplay.textContent = player.findChord(nowPosition).name;
+  chordDisplay.textContent = player.findChord(position).name;
 
   //ビートの取得
-  const beat = player.findBeat(nowPosition);
-  if (beat && beat.startTime !== prevBeatStartTime) {
-    //取得したビートが小節中の何拍目かに応じて「*」を表示します。
-    prevBeatStartTime = beat.startTime;
-    let beatText = '';
-    for (let i = 0; i < beat.position; i++) {
-      beatText += '* ';
-    }
-    beatDisplay.textContent = beatText;
+  const beat = player.findBeat(position);
+  if (beat.position === prevBeatPosition) return;
+  let beatText = '';
+  for (let i = 0; i < beat.position; i++) {
+    beatText += '* ';
   }
-  requestAnimationFrame(() => loop(prevBeatStartTime));
-};
-
-//Playerに設定するイベントリスナです。(onAppReady, onTimerReady)
-const onAppReady = (app: IPlayerApp) => {
-  //好きな楽曲のURLを指定します。//URLの取得方法は記事の後半で解説しています。
-  player.createFromSongUrl('https://piapro.jp/t/fnhJ/20230131212038');
-  addButtonEventListeners();
-};
-const onTimerReady = (t: Timer) => {
-  //再生の準備が整った時に呼ばれます。
-  playButton.disabled = false;
-  pauseButton.disabled = false;
-  rewindButton.disabled = false;
-  requestAnimationFrame(loop);
+  beatDisplay.textContent = beatText;
+  prevBeatPosition = beat.position;
 };
 
 // ===== Playerを作成してリスナを登録することで順次処理を開始　===== //
@@ -99,7 +96,9 @@ const player = new Player({
 player.addListener({
   onAppReady,
   onTimerReady,
+  onTimeUpdate,
 });
+
 ```
 ```html: index.html
 <!DOCTYPE html>
@@ -179,9 +178,17 @@ button:focus-visible {
 }
 ```
 :::
+### 実行方法
+```
+npm run dev
+```
+
+## 解説
 ### Playerの準備
-リスナーの設定
-楽曲URLの取得方法
+- **[リスナー](https://developer.textalive.jp/app/life-cycle/)の設定**
+
+
+### 楽曲URLの取得方法
 ### ループを実装
 ### 歌詞を取得
 ### コードを取得
