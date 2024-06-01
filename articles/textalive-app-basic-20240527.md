@@ -3,7 +3,7 @@ title: "TextAliveAppApiで歌詞・コード・ビートをリアルタイムに
 emoji: "🎺"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [javascript, typescript, textaliveappapi]
-published: false
+published: true
 ---
 この記事では[TextAliveAppAPI](https://developer.textalive.jp/)を使って、楽曲から歌詞・コード・ビートを取得するシンプルな実装を紹介します。
 
