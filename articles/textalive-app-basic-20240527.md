@@ -182,7 +182,6 @@ button:focus-visible {
 ```
 npm run dev
 ```
-
 ## 解説
 ### リスナーの設定
 
@@ -192,9 +191,9 @@ npm run dev
 [公式ドキュメント→](https://developer.textalive.jp/app/life-cycle/)
 
 ### 楽曲URLの取得方法
-使用できる楽曲は https://textalive.jp/songs で検索できます。\
+使用できる楽曲は https://textalive.jp/songs で検索できます。
 ![楽曲検索](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/search-song.png =480x)
 
-ニコニコ動画のURLの楽曲はなぜか動作しません。調べてみましたが原因はまだわかりませんでした。\
+ローカル環境ではニコニコ動画のURLの楽曲は動作しません。ngrokで公開しHTTPS経由でアクセス可能にすると正常に動作しました。
 ![エラー](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/nikoniko-error.png =360x)
 
