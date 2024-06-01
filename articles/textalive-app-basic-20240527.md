@@ -8,7 +8,7 @@ published: false
 この記事では[TextAliveAppAPI](https://developer.textalive.jp/)を使って、楽曲から歌詞・コード・ビートを取得するシンプルな実装を紹介します。
 
 ## デモ
-![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/demo1.gif =480x)
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/demo.gif =480x)
 ## 実装
 ### 環境構築
 **TextAliveAppAPIの事前準備**
@@ -184,12 +184,17 @@ npm run dev
 ```
 
 ## 解説
-### Playerの準備
-- **[リスナー](https://developer.textalive.jp/app/life-cycle/)の設定**
+### リスナーの設定
 
+`onAppReady`：ホスト・楽曲URLの有無の確認はここに記述します。\
+`onTimerReady`：発火したら、再生の準備は完了です。\
+`onTimeUpdates`：再生位置が変化するたびに発火します。ここに楽曲情報の処理を記述します。
+[公式ドキュメント→](https://developer.textalive.jp/app/life-cycle/)
 
 ### 楽曲URLの取得方法
-### ループを実装
-### 歌詞を取得
-### コードを取得
-### ビートを取得
+使用できる楽曲は https://textalive.jp/songs で検索できます。\
+![楽曲検索](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/search-song.png =480x)
+
+ニコニコ動画のURLの楽曲はなぜか動作しません。調べてみましたが原因はまだわかりませんでした。\
+![エラー](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/nikoniko-error.png =360x)
+
