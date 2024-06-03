@@ -197,3 +197,4 @@ npm run dev
 ローカル環境ではニコニコ動画のURLの楽曲は動作しません。ngrokで公開しHTTPS経由でアクセス可能にすると正常に動作しました。
 ![エラー](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/textalive-app-basic-20240527/nikoniko-error.png =360x)
 
+https://developer.textalive.jp/app/
