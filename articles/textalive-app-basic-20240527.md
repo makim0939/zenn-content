@@ -184,11 +184,22 @@ npm run dev
 ```
 ## 解説
 ### リスナーの設定
-
 `onAppReady`：ホスト・楽曲URLの有無の確認はここに記述します。\
 `onTimerReady`：発火したら、再生の準備は完了です。\
 `onTimeUpdates`：再生位置が変化するたびに発火します。ここに楽曲情報の処理を記述します。
 [公式ドキュメント→](https://developer.textalive.jp/app/life-cycle/)
+
+### 楽曲情報の取得
+楽曲情報の取得はonTimerUpdates()に記述すると良いと思います。
+- **歌詞の取得**
+歌詞は文字・単語・フレーズの3つの異なる単位で取得できます。
+```
+const char = player.video.findChar(position).text
+const word = player.video.findWord(position).text
+const phrase = player.video.findPhrase(position).text
+```
+<!-- - **コードの取得**
+- **ビートの取得** -->
 
 ### 楽曲URLの取得方法
 使用できる楽曲は https://textalive.jp/songs で検索できます。
