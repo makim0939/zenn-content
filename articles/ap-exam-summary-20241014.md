@@ -3,7 +3,7 @@ title: "応用情報技術者試験を受けた感想"
 emoji: "🧑‍🏫"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [応用情報技術者試験, AP]
-published: false
+published: true
 ---
 先日、令和6年度 秋期 応用情報技術者試験を受験してきました。
 この記事では情報学部4年の私が、応用情報の受験を通して感じたことを備忘録として残しておきます。
@@ -34,7 +34,9 @@ published: false
 https://qiita.com/meshi0323/items/ecbbd57e54fe83308ef9
 https://tomoblog.net/programing/oyozyoho-database-sql-list/
 
-勉強した内容は全てNotionにまとめるようにしました。
+:::message
+勉強した内容は全てNotionにまとめるようにしていました。
+:::
 ## 受験した経緯
 私が就職を決めた会社では、技術力の向上・高度ソフトウェア技術者の育成に力を入れています。
 社内資格のような制度があり、入社前にその前提となる知識を身につけておきたいと思ったことが受験を考えたきっかけです。
