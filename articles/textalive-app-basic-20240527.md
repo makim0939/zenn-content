@@ -193,13 +193,14 @@ npm run dev
 楽曲情報の取得はonTimerUpdates()に記述すると良いと思います。
 - **歌詞の取得**
 歌詞は文字・単語・フレーズの3つの異なる単位で取得できます。
+[IChar](https://developer.textalive.jp/packages/textalive-app-api/interfaces/IChar.html), 
+[IWord](https://developer.textalive.jp/packages/textalive-app-api/interfaces/IWord.html), 
+[IPhrase](https://developer.textalive.jp/packages/textalive-app-api/interfaces/IPhrase.html)
 ```
 const char = player.video.findChar(position).text
 const word = player.video.findWord(position).text
 const phrase = player.video.findPhrase(position).text
 ```
-<!-- - **コードの取得**
-- **ビートの取得** -->
 
 ### 楽曲URLの取得方法
 使用できる楽曲は https://textalive.jp/songs で検索できます。
