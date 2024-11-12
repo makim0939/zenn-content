@@ -38,9 +38,7 @@ const Draggable = ({
     if (ignoreTags) {
       const upperIgnoreTags = ignoreTags?.map((tag) => tag.toUpperCase());
       const target = e.target as HTMLElement;
-      if (upperIgnoreTags.includes(target.tagName)) {
-        return;
-      }
+      if (upperIgnoreTags.includes(target.tagName)) return;
     }
     if (isDragging) return;
     setIsDragging(true);
@@ -104,12 +102,11 @@ export default Draggable;
 プロップ`ignore`として指定したHTMLElementのタグ名の配列を指定することで、それに当てはまる要素をドラッグできないようにしています。
 ```ts: handleMouseDown関数
 const handleMouseDown = (e: React.MouseEvent) => {
-    if (ignoreTags) {
-      const upperIgnoreTags = ignoreTags?.map((tag) => tag.toUpperCase());
-      const target = e.target as HTMLElement;
-      if (upperIgnoreTags.includes(target.tagName)) {
-        return;
-      }
-    }
-   //startPositionの更新処理　...
+  if (ignoreTags) {
+    const upperIgnoreTags = ignoreTags?.map((tag) => tag.toUpperCase());
+    const target = e.target as HTMLElement;
+    if (upperIgnoreTags.includes(target.tagName)) return;
+  }
+  //startPositionの更新処理　...
+}
 ```
