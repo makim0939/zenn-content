@@ -11,11 +11,11 @@ ESlintの設定が苦しくなったのでBiomeを導入してみました。
 ## 1. VSCodeの設定
 - **VSCodeの拡張機能のインストール**
 [Biome VS Code extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
-![VSCode拡張機能](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/vscode-plugin.png =250x)
+![VSCode拡張機能](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/vscode-plugin.png =420x)
 *VSCode拡張機能*
 - **Formatterの設定**
 右下の歯車マークから「設定」を開いて「format」で検索すると「Editor:DefaultFormatter」が出てきます。
-![フォーマッターの設定](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/formatter-settings.png  =250x)
+![フォーマッターの設定](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/formatter-settings.png  =420x)
 *Formatterの設定*
 :::message
 この時点ではまだフォーマットは適用されません
@@ -31,7 +31,7 @@ npx @biomejs/biome init
 ```
 設定ファイル`biome.json`が作成されます。
 ここまでの設定を終えれば、VSCodeで警告・フォーマットされるようになります。
-![警告が出る様子](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/alert.png =250x)
+![警告が出る様子](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/alert.png =540x)
 警告文からドキュメントに飛べて、ドキュメントがわかりやすいのでなんのエラーかすぐにわかります。
 - **ignoreファイルを設定する**
 ```:json biome.json
@@ -58,9 +58,9 @@ npx @biomejs/biome format --write ファイル名
 import文**ファイルからの距離**によってソートされるみたいです。
 (距離が同じ場合はアルファベット順)
 - **試しに`check --write`してみる**
-![ソート前](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/bfore-sort.png =250x)
+![ソート前](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/before-sort.png =360x)
 *ソート前*
-![ソート後](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/after-sort.png =250x)
+![ソート後](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/biome-setup-20241116/after-sort.png =360x)
 *ソート後*
 
 ## 4. Huskyでコミット前にlint, format, import文のソートを適用
