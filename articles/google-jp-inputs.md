@@ -2,7 +2,7 @@
 title: "【Windows11】MicrosoftIMEからGoogle日本語入力乗り換える"
 emoji: "⌨️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [Windows11, GoogleJapaneseInput]
+topics: [Windows11, google日本語入力]
 published: true
 ---
 
