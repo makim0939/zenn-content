@@ -3,7 +3,7 @@ title: "【Windows11】MicrosoftIMEからGoogle日本語入力乗り換える"
 emoji: "⌨️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Windows11, GoogleJapaneseInput]
-published: false
+published: true
 ---
 
 テンキーの無いキーボードで、数字を半角入力するのに不便を感じ、Google日本語入力を導入してみました。
@@ -24,7 +24,7 @@ Macのように「zh, zj, zk, zl」で「←, ↓, ↑, →」を入力できる
 [https://www.google.co.jp/ime/](https://www.google.co.jp/ime/)
 
 タスクバーにGoogle日本語入力のアイコンが表示されます。
-![Google日本語入力アイコン](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install1.png =420x)
+![Google日本語入力アイコン](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install1.png =240x)
 
 ### 設定の変更
 
