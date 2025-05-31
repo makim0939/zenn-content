@@ -6,7 +6,8 @@ topics: [Windows11, google日本語入力]
 published: true
 ---
 
-テンキーの無いキーボードで、数字を半角入力するのに不便を感じ、Google日本語入力を導入してみました。
+テンキーの無いキーボードで、数字を半角入力するのに不便を感じたので、
+Google日本語入力を導入してみました。
 
 ## 結果
 
@@ -33,4 +34,4 @@ Macのように「zh, zj, zk, zl」で「←, ↓, ↑, →」を入力できる
 ![プロパティウィンドウ](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install2.png =420x)
 
 以上で、Windows11のかな入力で半角数字を直接入力できるようになります。
-Macに慣れているにはおすすめです。ぜひ試してみてください。
+Macに慣れている人にはおすすめです。ぜひ試してみてください。
