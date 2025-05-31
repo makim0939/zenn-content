@@ -24,14 +24,13 @@ Macのように「zh, zj, zk, zl」で「←, ↓, ↑, →」を入力できる
 [https://www.google.co.jp/ime/](https://www.google.co.jp/ime/)
 
 タスクバーにGoogle日本語入力のアイコンが表示されます。
-Macのように「zh, zj, zk, zl」で「←, ↓, ↑, →」を入力できるようにもなりました。
-![矢印入力デモ](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install1.png =420x)
+![Google日本語入力アイコン](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install1.png =420x)
 
 ### 設定の変更
 
 タスクバーの「あ」のアイコンを右クリックしてプロパティを開きます。
 「入力候補」タブから、数字を半角に設定します。
-![矢印入力デモ](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install2.png =420x)
+![プロパティウィンドウ](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install2.png =420x)
 
 以上で、Windows11のかな入力で半角数字を直接入力できるようになります。
 Macに慣れていにはおすすめです。ぜひ試してみてください。
