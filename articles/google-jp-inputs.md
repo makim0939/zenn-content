@@ -1,12 +1,12 @@
 ---
-title: "【Windows11】MicrosoftIMEからGoogle日本語入力乗り換える"
+title: "【Windows11】MicrosoftIMEからGoogle日本語入力に乗り換える"
 emoji: "⌨️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Windows11, google日本語入力]
 published: true
 ---
 
-テンキーの無いキーボードで、数字を半角入力するのに不便を感じたので、
+テンキーの無いキーボードで、数字を半角入力するのが不便に感じたので、
 Google日本語入力を導入してみました。
 
 ## 結果
