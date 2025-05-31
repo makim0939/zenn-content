@@ -33,4 +33,4 @@ Macのように「zh, zj, zk, zl」で「←, ↓, ↑, →」を入力できる
 ![プロパティウィンドウ](https://raw.githubusercontent.com/makim0939/zenn-content/refs/heads/main/articles/images/google-jp-inputs/install2.png =420x)
 
 以上で、Windows11のかな入力で半角数字を直接入力できるようになります。
-Macに慣れていにはおすすめです。ぜひ試してみてください。
+Macに慣れているにはおすすめです。ぜひ試してみてください。
