@@ -12,9 +12,8 @@ published: true
 
 ## 実装
 ### 実装環境
-今回はVite×React×TypeScriptを使います。
-DeviceOrientationEventはhttpsのサイトでしか使えないので、そのための環境を作ります。
-別デバイスからもアクセスしてテストする場合は、httpsで動作す環境を用意します。
+今回はVite・React・TypeScriptで実装します。
+DeviceOrientationEventは**httpsのサイトでしか使えない**ので、そのための環境を作ります。
 :::details Viteでhttps環境を用意
 ```
 npm vite create@latest
