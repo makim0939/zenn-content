@@ -8,7 +8,7 @@ published: true
 この記事では、Webサイトでスマホの傾きを検知して描画に反映する方法を紹介します。
 
 ## デモ
-![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/try-device-orientation-react/device-orientation-demo.gif)
+![デモ](https://raw.githubusercontent.com/makim0939/zenn-content/main/articles/images/try-device-orientation-react/device-orientation-demo.gif =320x)
 
 ## 実装
 ### 実装環境
